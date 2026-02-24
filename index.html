@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -41,43 +40,97 @@
     </div>
   </header>
 
-  <!-- HERO / BANNER -->
-  <section class="hero">
-    <div class="container hero__inner">
-      <div class="hero__content">
-        <p class="badge">Ưu đãi tháng này • Giảm đến 15%</p>
-        <h1 class="hero__title">Xe moto chính hãng<br />Phong cách & Hiệu năng</h1>
-        <p class="hero__desc">
-          Chọn xe phù hợp cho đô thị, touring hay off-road. Giá minh bạch, bảo hành rõ ràng, hỗ trợ trả góp.
-        </p>
-        <div class="hero__cta">
-          <a class="btn btn--primary" href="#products">Xem sản phẩm</a>
-          <a class="btn btn--ghost" href="#newsletter">Nhận ưu đãi</a>
-        </div>
+  <!-- HERO SLIDER (CSS-only) -->
+  <section class="hero-slider" aria-label="Banner slider">
+    <!-- radio controls -->
+    <input class="hs__radio" type="radio" name="hs" id="hs-1" checked>
+    <input class="hs__radio" type="radio" name="hs" id="hs-2">
+    <input class="hs__radio" type="radio" name="hs" id="hs-3">
 
-        <div class="hero__stats">
-          <div class="stat">
-            <div class="stat__num">120+</div>
-            <div class="stat__label">Mẫu xe</div>
-          </div>
-          <div class="stat">
-            <div class="stat__num">24/7</div>
-            <div class="stat__label">Tư vấn</div>
-          </div>
-          <div class="stat">
-            <div class="stat__num">1-2 ngày</div>
-            <div class="stat__label">Giao nhanh</div>
-          </div>
-        </div>
-      </div>
+    <div class="hs__viewport">
+      <div class="hs__track">
+        <!-- Slide 1 -->
+        <article class="hs__slide hs__slide--1">
+          <div class="container hs__content">
+            <p class="badge">Ưu đãi tháng này • Giảm đến 15%</p>
+            <h1 class="hs__title">Xe moto chính hãng<br>Phong cách & Hiệu năng</h1>
+            <p class="hs__desc">
+              Chọn xe phù hợp cho đô thị, touring hay off-road. Giá minh bạch, bảo hành rõ ràng, hỗ trợ trả góp.
+            </p>
+            <div class="hs__cta">
+              <a class="btn btn--primary" href="#products">Xem sản phẩm</a>
+              <a class="btn btn--ghost" href="#newsletter">Nhận ưu đãi</a>
+            </div>
 
-      <div class="hero__media" aria-hidden="true">
-        <img
-          class="hero__img"
-          src="https://images.unsplash.com/photo-1526725702345-bdda2b97ef73?auto=format&fit=crop&w=1200&q=70"
-          alt=""
-        />
+            <div class="hs__stats">
+              <div class="stat">
+                <div class="stat__num">120+</div>
+                <div class="stat__label">Mẫu xe</div>
+              </div>
+              <div class="stat">
+                <div class="stat__num">24/7</div>
+                <div class="stat__label">Tư vấn</div>
+              </div>
+              <div class="stat">
+                <div class="stat__num">1-2 ngày</div>
+                <div class="stat__label">Giao nhanh</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Slide 2 -->
+        <article class="hs__slide hs__slide--2">
+          <div class="container hs__content">
+            <p class="badge badge--alt">Touring Collection • Ưu đãi phụ kiện</p>
+            <h2 class="hs__title">Chạy đường dài<br>Êm – bền – tiết kiệm</h2>
+            <p class="hs__desc">
+              Gợi ý xe touring cho nhu cầu đi xa: tư thế lái thoải mái, bình xăng lớn, phuộc êm, dễ bảo dưỡng.
+            </p>
+            <div class="hs__cta">
+              <a class="btn btn--primary" href="#products">Khám phá touring</a>
+              <a class="btn btn--ghost" href="#features">Xem ưu đãi</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Slide 3 -->
+        <article class="hs__slide hs__slide--3">
+          <div class="container hs__content">
+            <p class="badge badge--alt2">New Arrival • Hàng mới về</p>
+            <h2 class="hs__title">Mẫu mới 2026<br>Giá tốt – đủ màu</h2>
+            <p class="hs__desc">
+              Cập nhật các mẫu mới: phanh ABS, đồng hồ TFT, đèn LED. Hỗ trợ trả góp nhanh và giao theo lịch hẹn.
+            </p>
+            <div class="hs__cta">
+              <a class="btn btn--primary" href="#new">Xem hàng mới</a>
+              <a class="btn btn--ghost" href="#newsletter">Nhận thông báo</a>
+            </div>
+          </div>
+        </article>
       </div>
+    </div>
+
+    <!-- ARROWS (labels click radio) -->
+    <div class="hs__arrows">
+      <!-- when slide 1 -->
+      <label class="hs__arrow hs__arrow--prev hs__show-1" for="hs-3" aria-label="Slide trước">‹</label>
+      <label class="hs__arrow hs__arrow--next hs__show-1" for="hs-2" aria-label="Slide sau">›</label>
+
+      <!-- when slide 2 -->
+      <label class="hs__arrow hs__arrow--prev hs__show-2" for="hs-1" aria-label="Slide trước">‹</label>
+      <label class="hs__arrow hs__arrow--next hs__show-2" for="hs-3" aria-label="Slide sau">›</label>
+
+      <!-- when slide 3 -->
+      <label class="hs__arrow hs__arrow--prev hs__show-3" for="hs-2" aria-label="Slide trước">‹</label>
+      <label class="hs__arrow hs__arrow--next hs__show-3" for="hs-1" aria-label="Slide sau">›</label>
+    </div>
+
+    <!-- DOTS -->
+    <div class="hs__dots" role="tablist" aria-label="Chọn banner">
+      <label class="hs__dot" for="hs-1" aria-label="Slide 1"></label>
+      <label class="hs__dot" for="hs-2" aria-label="Slide 2"></label>
+      <label class="hs__dot" for="hs-3" aria-label="Slide 3"></label>
     </div>
   </section>
 
@@ -93,35 +146,35 @@
         <article class="feature">
           <div class="feature__icon">🚚</div>
           <h3 class="feature__title">Free ship nội thành</h3>
-          <p class="feature__desc">Hỗ trợ giao xe nội thành theo lịch hẹn, kiểm tra xe trước khi nhận.</p>
+          <p class="feature__desc">Giao xe theo lịch hẹn, kiểm tra xe trước khi nhận.</p>
         </article>
         <article class="feature">
           <div class="feature__icon">🛠️</div>
           <h3 class="feature__title">Bảo hành minh bạch</h3>
-          <p class="feature__desc">Chính sách bảo hành rõ ràng, nhắc lịch bảo dưỡng định kỳ.</p>
+          <p class="feature__desc">Chính sách rõ ràng, nhắc lịch bảo dưỡng định kỳ.</p>
         </article>
         <article class="feature">
           <div class="feature__icon">💳</div>
           <h3 class="feature__title">Hỗ trợ trả góp</h3>
-          <p class="feature__desc">Đa dạng gói trả góp, tư vấn hồ sơ nhanh chóng, thủ tục gọn.</p>
+          <p class="feature__desc">Tư vấn hồ sơ nhanh, thủ tục gọn gàng.</p>
         </article>
         <article class="feature">
           <div class="feature__icon">🔥</div>
           <h3 class="feature__title">Deal & Khuyến mãi</h3>
-          <p class="feature__desc">Giảm giá theo mùa, quà tặng phụ kiện, voucher bảo dưỡng.</p>
+          <p class="feature__desc">Giảm theo mùa, quà tặng phụ kiện, voucher.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- SMALL BANNER (Sm Banner) -->
+  <!-- SMALL BANNER -->
   <section class="section section--tight">
     <div class="container">
       <div class="sm-banners">
         <a class="sm-banner sm-banner--left" href="#products">
           <div class="sm-banner__content">
             <p class="sm-banner__tag">Touring Collection</p>
-            <h3 class="sm-banner__title">Chạy đường dài<br/>êm & bền</h3>
+            <h3 class="sm-banner__title">Chạy đường dài<br>êm & bền</h3>
             <span class="sm-banner__cta">Khám phá →</span>
           </div>
         </a>
@@ -129,7 +182,7 @@
         <a class="sm-banner sm-banner--right" href="#new">
           <div class="sm-banner__content">
             <p class="sm-banner__tag">New Arrival</p>
-            <h3 class="sm-banner__title">Mẫu mới về<br/>giá tốt</h3>
+            <h3 class="sm-banner__title">Mẫu mới về<br>giá tốt</h3>
             <span class="sm-banner__cta">Xem ngay →</span>
           </div>
         </a>
@@ -149,10 +202,9 @@
       </div>
 
       <div class="grid grid--4">
-        <!-- 8 product cards -->
         <article class="card product">
           <div class="product__img">
-            <img src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=800&q=70" alt="Street 150" />
+            <img src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=1200&q=70" alt="Street 150">
           </div>
           <div class="product__body">
             <h3 class="product__name">Street 150</h3>
@@ -163,7 +215,7 @@
 
         <article class="card product">
           <div class="product__img">
-            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=70" alt="City Compact 125" />
+            <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1200&q=70" alt="City Compact 125">
           </div>
           <div class="product__body">
             <h3 class="product__name">City Compact 125</h3>
@@ -174,7 +226,7 @@
 
         <article class="card product">
           <div class="product__img">
-            <img src="https://images.unsplash.com/photo-1508804052814-cd3ba865a116?auto=format&fit=crop&w=800&q=70" alt="Touring 250" />
+            <img src="https://images.unsplash.com/photo-1508804052814-cd3ba865a116?auto=format&fit=crop&w=1200&q=70" alt="Touring 250">
           </div>
           <div class="product__body">
             <h3 class="product__name">Touring 250</h3>
@@ -185,7 +237,7 @@
 
         <article class="card product">
           <div class="product__img">
-            <img src="https://images.unsplash.com/photo-1524593119773-6a7f1b20e0c6?auto=format&fit=crop&w=800&q=70" alt="Classic 175" />
+            <img src="https://images.unsplash.com/photo-1524593119773-6a7f1b20e0c6?auto=format&fit=crop&w=1200&q=70" alt="Classic 175">
           </div>
           <div class="product__body">
             <h3 class="product__name">Classic 175</h3>
@@ -196,7 +248,7 @@
 
         <article class="card product">
           <div class="product__img">
-            <img src="https://images.unsplash.com/photo-1605289355680-a8e2a4a5a1de?auto=format&fit=crop&w=800&q=70" alt="Scooter Pro 160" />
+            <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=1200&q=70" alt="Scooter Pro 160">
           </div>
           <div class="product__body">
             <h3 class="product__name">Scooter Pro 160</h3>
@@ -207,7 +259,7 @@
 
         <article class="card product">
           <div class="product__img">
-            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=70" alt="Sport 300" />
+            <img src="https://images.unsplash.com/photo-1518441902117-f0a9b7f1c9c9?auto=format&fit=crop&w=1200&q=70" alt="Sport 300">
           </div>
           <div class="product__body">
             <h3 class="product__name">Sport 300</h3>
@@ -218,7 +270,7 @@
 
         <article class="card product">
           <div class="product__img">
-            <img src="https://images.unsplash.com/photo-1520975693416-35a5e23f2fd8?auto=format&fit=crop&w=800&q=70" alt="Adventure 400" />
+            <img src="https://images.unsplash.com/photo-1520975958225-96b9d22a6b82?auto=format&fit=crop&w=1200&q=70" alt="Adventure 400">
           </div>
           <div class="product__body">
             <h3 class="product__name">Adventure 400</h3>
@@ -229,7 +281,7 @@
 
         <article class="card product">
           <div class="product__img">
-            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=70" alt="Naked 200" />
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=70" alt="Naked 200">
           </div>
           <div class="product__body">
             <h3 class="product__name">Naked 200</h3>
@@ -253,7 +305,7 @@
         <article class="card product product--new">
           <div class="product__img">
             <span class="tag">NEW</span>
-            <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=800&q=70" alt="Neo Scooter 125" />
+            <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1200&q=70" alt="Neo Scooter 125">
           </div>
           <div class="product__body">
             <h3 class="product__name">Neo Scooter 125</h3>
@@ -265,7 +317,7 @@
         <article class="card product product--new">
           <div class="product__img">
             <span class="tag">NEW</span>
-            <img src="https://images.unsplash.com/photo-1558981359-219d6364c9c8?auto=format&fit=crop&w=800&q=70" alt="Urban 155 ABS" />
+            <img src="https://images.unsplash.com/photo-1558981359-219d6364c9c8?auto=format&fit=crop&w=1200&q=70" alt="Urban 155 ABS">
           </div>
           <div class="product__body">
             <h3 class="product__name">Urban 155 ABS</h3>
@@ -277,7 +329,7 @@
         <article class="card product product--new">
           <div class="product__img">
             <span class="tag">NEW</span>
-            <img src="https://images.unsplash.com/photo-1518441902117-f0a9b7f1c9c9?auto=format&fit=crop&w=800&q=70" alt="Cafe Racer 200" />
+            <img src="https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=1200&q=70" alt="Cafe Racer 200">
           </div>
           <div class="product__body">
             <h3 class="product__name">Cafe Racer 200</h3>
@@ -289,7 +341,7 @@
         <article class="card product product--new">
           <div class="product__img">
             <span class="tag">NEW</span>
-            <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=800&q=70" alt="Trail 250" />
+            <img src="https://images.unsplash.com/photo-1524593119773-6a7f1b20e0c6?auto=format&fit=crop&w=1200&q=70" alt="Trail 250">
           </div>
           <div class="product__body">
             <h3 class="product__name">Trail 250</h3>
@@ -301,7 +353,7 @@
     </div>
   </section>
 
-  <!-- NEWSLETTER / LETTER SECTION -->
+  <!-- NEWSLETTER -->
   <section class="section" id="newsletter">
     <div class="container">
       <div class="newsletter">
