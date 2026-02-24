@@ -1,0 +1,359 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MotoHub | Cửa hàng xe moto</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header__inner">
+      <a class="logo" href="#">
+        <span class="logo__mark">MH</span>
+        <span class="logo__text">MotoHub</span>
+      </a>
+
+      <nav class="nav">
+        <a class="nav__link" href="#features">Ưu đãi</a>
+        <a class="nav__link" href="#products">Sản phẩm</a>
+        <a class="nav__link" href="#new">Hàng mới</a>
+        <a class="nav__link" href="#newsletter">Nhận tin</a>
+        <a class="nav__link" href="#footer">Liên hệ</a>
+      </nav>
+
+      <div class="header__actions">
+        <button class="icon-btn" aria-label="Tìm kiếm">
+          <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+            <path d="M10.5 3a7.5 7.5 0 1 0 4.74 13.33l3.72 3.72 1.41-1.41-3.72-3.72A7.5 7.5 0 0 0 10.5 3Zm0 2a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11Z"/>
+          </svg>
+        </button>
+        <button class="icon-btn" aria-label="Giỏ hàng">
+          <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+            <path d="M7 4h-2l-1 2v2h2l2.6 9.4A3 3 0 0 0 11.5 22h7.1a3 3 0 0 0 2.9-2.2L23 10H7.4L6.7 7H21V5H7.2L7 4Zm4.5 16a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm7 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/>
+          </svg>
+        </button>
+        <a class="btn btn--primary" href="#products">Mua ngay</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO / BANNER -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <p class="badge">Ưu đãi tháng này • Giảm đến 15%</p>
+        <h1 class="hero__title">Xe moto chính hãng<br />Phong cách & Hiệu năng</h1>
+        <p class="hero__desc">
+          Chọn xe phù hợp cho đô thị, touring hay off-road. Giá minh bạch, bảo hành rõ ràng, hỗ trợ trả góp.
+        </p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#products">Xem sản phẩm</a>
+          <a class="btn btn--ghost" href="#newsletter">Nhận ưu đãi</a>
+        </div>
+
+        <div class="hero__stats">
+          <div class="stat">
+            <div class="stat__num">120+</div>
+            <div class="stat__label">Mẫu xe</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">24/7</div>
+            <div class="stat__label">Tư vấn</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">1-2 ngày</div>
+            <div class="stat__label">Giao nhanh</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__media" aria-hidden="true">
+        <img
+          class="hero__img"
+          src="https://images.unsplash.com/photo-1526725702345-bdda2b97ef73?auto=format&fit=crop&w=1200&q=70"
+          alt=""
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE SECTION -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section__head">
+        <h2 class="section__title">Vì sao chọn MotoHub?</h2>
+        <p class="section__sub">Trải nghiệm mua xe online nhanh – gọn – rõ ràng.</p>
+      </div>
+
+      <div class="grid grid--4">
+        <article class="feature">
+          <div class="feature__icon">🚚</div>
+          <h3 class="feature__title">Free ship nội thành</h3>
+          <p class="feature__desc">Hỗ trợ giao xe nội thành theo lịch hẹn, kiểm tra xe trước khi nhận.</p>
+        </article>
+        <article class="feature">
+          <div class="feature__icon">🛠️</div>
+          <h3 class="feature__title">Bảo hành minh bạch</h3>
+          <p class="feature__desc">Chính sách bảo hành rõ ràng, nhắc lịch bảo dưỡng định kỳ.</p>
+        </article>
+        <article class="feature">
+          <div class="feature__icon">💳</div>
+          <h3 class="feature__title">Hỗ trợ trả góp</h3>
+          <p class="feature__desc">Đa dạng gói trả góp, tư vấn hồ sơ nhanh chóng, thủ tục gọn.</p>
+        </article>
+        <article class="feature">
+          <div class="feature__icon">🔥</div>
+          <h3 class="feature__title">Deal & Khuyến mãi</h3>
+          <p class="feature__desc">Giảm giá theo mùa, quà tặng phụ kiện, voucher bảo dưỡng.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SMALL BANNER (Sm Banner) -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="sm-banners">
+        <a class="sm-banner sm-banner--left" href="#products">
+          <div class="sm-banner__content">
+            <p class="sm-banner__tag">Touring Collection</p>
+            <h3 class="sm-banner__title">Chạy đường dài<br/>êm & bền</h3>
+            <span class="sm-banner__cta">Khám phá →</span>
+          </div>
+        </a>
+
+        <a class="sm-banner sm-banner--right" href="#new">
+          <div class="sm-banner__content">
+            <p class="sm-banner__tag">New Arrival</p>
+            <h3 class="sm-banner__title">Mẫu mới về<br/>giá tốt</h3>
+            <span class="sm-banner__cta">Xem ngay →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT SECTION -->
+  <section class="section" id="products">
+    <div class="container">
+      <div class="section__head section__head--row">
+        <div>
+          <h2 class="section__title">Sản phẩm nổi bật</h2>
+          <p class="section__sub">Tối thiểu 8 sản phẩm (tên, giá, ảnh).</p>
+        </div>
+        <a class="btn btn--ghost" href="#new">Xem hàng mới</a>
+      </div>
+
+      <div class="grid grid--4">
+        <!-- 8 product cards -->
+        <article class="card product">
+          <div class="product__img">
+            <img src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=800&q=70" alt="Street 150" />
+          </div>
+          <div class="product__body">
+            <h3 class="product__name">Street 150</h3>
+            <p class="product__price">45.900.000₫</p>
+            <button class="btn btn--primary btn--full">Thêm vào giỏ</button>
+          </div>
+        </article>
+
+        <article class="card product">
+          <div class="product__img">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=70" alt="City Compact 125" />
+          </div>
+          <div class="product__body">
+            <h3 class="product__name">City Compact 125</h3>
+            <p class="product__price">38.500.000₫</p>
+            <button class="btn btn--primary btn--full">Thêm vào giỏ</button>
+          </div>
+        </article>
+
+        <article class="card product">
+          <div class="product__img">
+            <img src="https://images.unsplash.com/photo-1508804052814-cd3ba865a116?auto=format&fit=crop&w=800&q=70" alt="Touring 250" />
+          </div>
+          <div class="product__body">
+            <h3 class="product__name">Touring 250</h3>
+            <p class="product__price">86.000.000₫</p>
+            <button class="btn btn--primary btn--full">Thêm vào giỏ</button>
+          </div>
+        </article>
+
+        <article class="card product">
+          <div class="product__img">
+            <img src="https://images.unsplash.com/photo-1524593119773-6a7f1b20e0c6?auto=format&fit=crop&w=800&q=70" alt="Classic 175" />
+          </div>
+          <div class="product__body">
+            <h3 class="product__name">Classic 175</h3>
+            <p class="product__price">59.900.000₫</p>
+            <button class="btn btn--primary btn--full">Thêm vào giỏ</button>
+          </div>
+        </article>
+
+        <article class="card product">
+          <div class="product__img">
+            <img src="https://images.unsplash.com/photo-1605289355680-a8e2a4a5a1de?auto=format&fit=crop&w=800&q=70" alt="Scooter Pro 160" />
+          </div>
+          <div class="product__body">
+            <h3 class="product__name">Scooter Pro 160</h3>
+            <p class="product__price">52.300.000₫</p>
+            <button class="btn btn--primary btn--full">Thêm vào giỏ</button>
+          </div>
+        </article>
+
+        <article class="card product">
+          <div class="product__img">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=70" alt="Sport 300" />
+          </div>
+          <div class="product__body">
+            <h3 class="product__name">Sport 300</h3>
+            <p class="product__price">129.000.000₫</p>
+            <button class="btn btn--primary btn--full">Thêm vào giỏ</button>
+          </div>
+        </article>
+
+        <article class="card product">
+          <div class="product__img">
+            <img src="https://images.unsplash.com/photo-1520975693416-35a5e23f2fd8?auto=format&fit=crop&w=800&q=70" alt="Adventure 400" />
+          </div>
+          <div class="product__body">
+            <h3 class="product__name">Adventure 400</h3>
+            <p class="product__price">168.000.000₫</p>
+            <button class="btn btn--primary btn--full">Thêm vào giỏ</button>
+          </div>
+        </article>
+
+        <article class="card product">
+          <div class="product__img">
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=70" alt="Naked 200" />
+          </div>
+          <div class="product__body">
+            <h3 class="product__name">Naked 200</h3>
+            <p class="product__price">74.500.000₫</p>
+            <button class="btn btn--primary btn--full">Thêm vào giỏ</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW PRODUCT SECTION -->
+  <section class="section section--alt" id="new">
+    <div class="container">
+      <div class="section__head">
+        <h2 class="section__title">Sản phẩm mới</h2>
+        <p class="section__sub">Tối thiểu 4 sản phẩm mới.</p>
+      </div>
+
+      <div class="grid grid--4">
+        <article class="card product product--new">
+          <div class="product__img">
+            <span class="tag">NEW</span>
+            <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=800&q=70" alt="Neo Scooter 125" />
+          </div>
+          <div class="product__body">
+            <h3 class="product__name">Neo Scooter 125</h3>
+            <p class="product__price">41.900.000₫</p>
+            <button class="btn btn--primary btn--full">Thêm vào giỏ</button>
+          </div>
+        </article>
+
+        <article class="card product product--new">
+          <div class="product__img">
+            <span class="tag">NEW</span>
+            <img src="https://images.unsplash.com/photo-1558981359-219d6364c9c8?auto=format&fit=crop&w=800&q=70" alt="Urban 155 ABS" />
+          </div>
+          <div class="product__body">
+            <h3 class="product__name">Urban 155 ABS</h3>
+            <p class="product__price">63.200.000₫</p>
+            <button class="btn btn--primary btn--full">Thêm vào giỏ</button>
+          </div>
+        </article>
+
+        <article class="card product product--new">
+          <div class="product__img">
+            <span class="tag">NEW</span>
+            <img src="https://images.unsplash.com/photo-1518441902117-f0a9b7f1c9c9?auto=format&fit=crop&w=800&q=70" alt="Cafe Racer 200" />
+          </div>
+          <div class="product__body">
+            <h3 class="product__name">Cafe Racer 200</h3>
+            <p class="product__price">79.000.000₫</p>
+            <button class="btn btn--primary btn--full">Thêm vào giỏ</button>
+          </div>
+        </article>
+
+        <article class="card product product--new">
+          <div class="product__img">
+            <span class="tag">NEW</span>
+            <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=800&q=70" alt="Trail 250" />
+          </div>
+          <div class="product__body">
+            <h3 class="product__name">Trail 250</h3>
+            <p class="product__price">92.500.000₫</p>
+            <button class="btn btn--primary btn--full">Thêm vào giỏ</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER / LETTER SECTION -->
+  <section class="section" id="newsletter">
+    <div class="container">
+      <div class="newsletter">
+        <div class="newsletter__text">
+          <h2 class="newsletter__title">Nhận tin khuyến mãi</h2>
+          <p class="newsletter__desc">Đăng ký email để nhận deal mới, voucher và thông báo hàng về.</p>
+        </div>
+
+        <form class="newsletter__form" action="#" method="post">
+          <input class="input" type="email" name="email" placeholder="Nhập email của bạn..." required />
+          <button class="btn btn--primary" type="submit">Đăng ký</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer">
+    <div class="container footer__grid">
+      <div class="footer__col">
+        <div class="logo logo--footer">
+          <span class="logo__mark">MH</span>
+          <span class="logo__text">MotoHub</span>
+        </div>
+        <p class="footer__text">
+          Cửa hàng xe moto online – tư vấn chọn xe, hỗ trợ trả góp, giao xe theo lịch hẹn.
+        </p>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__title">Liên hệ</h3>
+        <ul class="footer__list">
+          <li>Hotline: 0900 123 456</li>
+          <li>Email: support@motohub.vn</li>
+          <li>Địa chỉ: Q.1, TP. Hồ Chí Minh</li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__title">Mạng xã hội</h3>
+        <div class="social">
+          <a class="social__link" href="#" aria-label="Facebook">f</a>
+          <a class="social__link" href="#" aria-label="Instagram">ig</a>
+          <a class="social__link" href="#" aria-label="YouTube">yt</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <p>© 2026 MotoHub. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
