@@ -144,13 +144,12 @@ a{ color:inherit; text-decoration:none; }
   position: relative;
   width: 100%;
   overflow: hidden;
-  min-height: clamp(520px, 70vh, 720px);
-  margin-top: 10px;
+  min-height: clamp(520px, 70vh, 525px);
 }
 
 .hs__radio{ position:absolute; opacity:0; pointer-events:none; }
 
-.hs__viewport{ width:100%; height:100%; }
+.hs__viewport{ width:100%; height:100%; position: relative; }
 .hs__track{
   display:flex;
   width: 300%;
@@ -210,8 +209,9 @@ a{ color:inherit; text-decoration:none; }
 
 .hs__content{
   position: relative;
-  z-index: 1;
+  z-index: 2;
   max-width: 860px; /* để chữ không quá dài */
+  padding-bottom: 56px;
 }
 
 .badge{
@@ -306,12 +306,17 @@ a{ color:inherit; text-decoration:none; }
 /* dots */
 .hs__dots{
   position:absolute;
-  left: 0; right: 0;
-  bottom: 44px;
+  bottom: 18px;
+  left: 50%;
   display:flex;
   justify-content:center;
   gap: 10px;
-  z-index: 2;
+  z-index: 3;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(12,15,20,.35);
+  border: 1px solid rgba(255,255,255,.12);
+  backdrop-filter: blur(6px);
 }
 .hs__dot{
   width: 10px; height: 10px;
@@ -338,16 +343,22 @@ a{ color:inherit; text-decoration:none; }
   border: 1px solid var(--line);
   background: rgba(255,255,255,.03);
   transition: transform .15s ease, background .15s ease, border-color .15s ease;
-  margin-bottom: -50px;
+  margin-bottom: 4px;
+  display: grid;
+  gap: 10px;                 /* khoảng cách đều giữa icon/title/desc */
+  align-content: start;
+}
+.section.features{
+  margin-bottom: 0;
 }
 .feature:hover{
   transform: translateY(-2px);
   background: rgba(255,255,255,.05);
-  border-color: rgba(255,255,255,.18);
+  border-color: rgba(27, 16, 16, 0.18);
 }
-.feature__icon{ font-size: 26px; }
-.feature__title{ margin: 8px 0 6px; font-size: 16px; }
-.feature__desc{ margin: 0; color: var(--muted); font-size: 14px; }
+.feature__icon{ font-size: 26px; margin: 0; line-height: 1; }
+.feature__title{ margin: 8px 0 6px; font-size: 16px; line-height: 1.25; }
+.feature__desc{ margin: 0; color: var(--muted); font-size: 14px; line-height: 1.45; }
 
 /* ============== SMALL BANNERS ============== */
 .sm-banners{
@@ -489,6 +500,118 @@ a{ color:inherit; text-decoration:none; }
   font-size: 13px;
 }
 
+/* ===== Banner giống mẫu hình ===== */
+.promo-banner{
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+
+  /* nền tối + overlay nhẹ */
+  background:
+    linear-gradient(90deg, rgba(5,10,18,.78) 0%, rgba(5,10,18,.65) 55%, rgba(5,10,18,.35) 100%),
+    url("https://images.unsplash.com/photo-1520975693416-35a5e23f2fd8?auto=format&fit=crop&w=2400&q=70")
+      center/cover no-repeat;
+
+  min-height: 210px;
+  display: grid;
+  place-items: center;
+}
+
+/* confetti shapes */
+.promo-banner::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(14px 10px at 12% 30%, rgba(255,255,255,.22) 0 55%, transparent 60%),
+    radial-gradient(12px 12px at 22% 55%, rgba(255,255,255,.20) 0 55%, transparent 60%),
+    radial-gradient(10px 14px at 34% 35%, rgba(255,255,255,.18) 0 55%, transparent 60%),
+    radial-gradient(14px 12px at 46% 60%, rgba(255,255,255,.20) 0 55%, transparent 60%),
+    radial-gradient(10px 10px at 56% 28%, rgba(255,255,255,.18) 0 55%, transparent 60%),
+    radial-gradient(16px 12px at 66% 52%, rgba(255,255,255,.20) 0 55%, transparent 60%);
+  opacity: .9;
+}
+
+/* kính/sản phẩm ở góc phải */
+.promo-banner::after{
+  content:"";
+  position:absolute;
+  right: -24px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: min(38vw, 360px);
+  height: 100%;
+  background:
+    url("https://images.unsplash.com/photo-1520975958225-96b9d22a6b82?auto=format&fit=crop&w=1200&q=70")
+    right center / cover no-repeat;
+  mask-image: radial-gradient(closest-side at 70% 50%, black 72%, transparent 78%);
+  opacity: .95;
+  pointer-events:none;
+}
+
+.promo-banner__inner{
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 28px 20px;
+  max-width: 980px;
+}
+
+.promo-banner__eyebrow{
+  margin: 0 0 10px;
+  color: rgba(255,255,255,.82);
+  font-weight: 700;
+  letter-spacing: .3px;
+}
+
+.promo-banner__title{
+  margin: 0 0 18px;
+  color: #fff;
+  font-weight: 900;
+  line-height: 1.15;
+  font-size: clamp(18px, 2.4vw, 34px);
+  text-shadow: 0 10px 30px rgba(0,0,0,.45);
+}
+
+.promo-banner__highlight{
+  color: #ff3b30; /* đỏ nổi bật như mẫu */
+}
+
+.promo-banner__btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #111;
+  font-weight: 800;
+  border: 1px solid rgba(0,0,0,.12);
+  transition: transform .15s ease, opacity .15s ease;
+}
+
+.promo-banner__btn:hover{
+  transform: translateY(-1px);
+  opacity: .92;
+}
+
+/* responsive: giảm “kính” bên phải để text không bị che */
+@media (max-width: 720px){
+  .promo-banner{ min-height: 190px; }
+  .promo-banner::after{
+    width: 52vw;
+    opacity: .65;
+  }
+}
+
+@media (max-width: 460px){
+  .promo-banner{ min-height: 180px; }
+  .promo-banner::after{ display:none; } /* mobile nhỏ: bỏ hình phải */
+  .promo-banner__inner{ padding: 24px 14px; }
+}
+
 /* ============== RESPONSIVE ============== */
 @media (max-width: 980px){
   .nav{ display:none; }
@@ -507,3 +630,4 @@ a{ color:inherit; text-decoration:none; }
   .hero-slider{ min-height: 520px; }
   .stat{ min-width: 120px; }
 }
+
