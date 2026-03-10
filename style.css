@@ -34,7 +34,7 @@ a{ color:inherit; text-decoration:none; }
 }
 
 .section{ padding: 56px 0; }
-.section--tight{ padding: 28px 0;}
+.section--tight{ padding: 56px 0;}
 .section--alt{
   background: rgba(255,255,255,.03);
   border-top: 1px solid var(--line);
@@ -375,7 +375,7 @@ a{ color:inherit; text-decoration:none; }
   overflow:hidden;
   position: relative;
   display:flex;
-  padding: 18px;
+  padding: 13px;
   transition: transform .15s ease, border-color .15s ease;
 }
 .sm-banner:hover{ transform: translateY(-2px); border-color: rgba(255,255,255,.20); }
