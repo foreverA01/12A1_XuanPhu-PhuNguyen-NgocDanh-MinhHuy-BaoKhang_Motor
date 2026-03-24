@@ -1,0 +1,2 @@
+.contact-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:24px}.contact-info,.contact-form{padding:22px}.contact-title{margin:0 0 12px;font-size:24px}.contact-item{padding:14px 0;border-top:1px solid var(--line)}.contact-item h3{margin:0 0 6px}.contact-form{display:grid;gap:12px}.textarea{min-height:140px;resize:vertical}
+@media (max-width:992px){.contact-layout{grid-template-columns:1fr}}
