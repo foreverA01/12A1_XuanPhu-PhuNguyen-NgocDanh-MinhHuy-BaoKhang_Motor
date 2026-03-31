@@ -334,10 +334,126 @@ button, input, textarea, select{
   font-size: 13px;
 }
 
+/* HEADER */
+.header{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  background: rgba(12,15,20,.65);
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+.header__inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:14px 0;
+}
+
+/* LOGO */
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:900;
+}
+
+.logo__mark{
+  width:38px;
+  height:38px;
+  border-radius:12px;
+  background: linear-gradient(135deg, rgba(86,204,242,.25), rgba(255,59,48,.25));
+  border:1px solid rgba(255,255,255,.12);
+}
+
+.logo__text{
+  letter-spacing:.3px;
+}
+
+/* NAV */
+.nav{
+  display:flex;
+  gap:14px;
+}
+
+.nav__link{
+  color: rgba(233,238,246,.7);
+  padding:8px 12px;
+  border-radius:999px;
+  transition: all .2s ease;
+}
+
+.nav__link:hover{
+  background: rgba(255,255,255,.08);
+  color: white;
+}
+
+.nav__link--active{
+  background: rgba(255,255,255,.12);
+  color: white;
+}
+
+/* HEADER BUTTON */
+.header__actions{
+  display:flex;
+  gap:10px;
+}
+
+/* FOOTER */
+.footer{
+  padding:40px 0 20px;
+  border-top:1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.2);
+}
+
+.footer__grid{
+  display:grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap:20px;
+}
+
+.footer__title{
+  margin-bottom:10px;
+  font-size:16px;
+}
+
+.footer__text{
+  color: rgba(233,238,246,.7);
+}
+
+.footer__list{
+  color: rgba(233,238,246,.7);
+  padding-left:18px;
+}
+
+.footer__list a:hover{
+  color: white;
+}
+
+.footer__bottom{
+  margin-top:20px;
+  padding-top:12px;
+  border-top:1px solid rgba(255,255,255,.12);
+  text-align:center;
+  font-size:13px;
+  color: rgba(233,238,246,.6);
+}
+
 /* responsive */
 @media (max-width: 980px){
   .nav{
     display: none;
+  }
+
+  .footer__grid{
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 980px){
+  .nav{
+    display:none;
   }
 
   .footer__grid{
@@ -363,3 +479,4 @@ button, input, textarea, select{
     grid-template-columns: 1fr;
   }
 }
+

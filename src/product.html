@@ -8,25 +8,35 @@
   <link rel="stylesheet" href="../publish/common.css" />
 </head>
 <body>
+  <!-- HEADER -->
   <header class="header">
     <div class="container header__inner">
-      <a class="logo" href="../index.html">
+      <a class="logo" href="#">
         <span class="logo__mark"></span>
         <span class="logo__text">YaMate</span>
       </a>
 
       <nav class="nav">
         <a class="nav__link" href="../index.html">Home</a>
-        <a class="nav__link" href="shop.html">Shop</a>
-        <a class="nav__link" href="blog.html">Blog</a>
-        <a class="nav__link" href="about.html">About</a>
-        <a class="nav__link" href="contact.html">Contact</a>
-        <a class="nav__link" href="cart.html">Cart</a>
+        <a class="nav__link" href="src/shop.html">Shop</a>
+        <a class="nav__link" href="src/blog.html">Blog</a>
+        <a class="nav__link" href="src/about.html">About</a>
+        <a class="nav__link" href="src/contact.html">Contact</a>
+        <a class="nav__link" href="src/cart.html">Cart</a>
       </nav>
 
       <div class="header__actions">
-        <a class="btn btn--ghost" href="shop.html">Quay lại shop</a>
-        <a class="btn btn--primary" href="cart.html">Mua ngay</a>
+        <button class="icon-btn" aria-label="Tìm kiếm">
+          <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+            <path d="M10.5 3a7.5 7.5 0 1 0 4.74 13.33l3.72 3.72 1.41-1.41-3.72-3.72A7.5 7.5 0 0 0 10.5 3Zm0 2a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11Z"/>
+          </svg>
+        </button>
+        <button class="icon-btn" style="padding-right: 10px;" aria-label="Giỏ hàng">
+          <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+            <path d="M7 4h-2l-1 2v2h2l2.6 9.4A3 3 0 0 0 11.5 22h7.1a3 3 0 0 0 2.9-2.2L23 10H7.4L6.7 7H21V5H7.2L7 4Zm4.5 16a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm7 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/>
+          </svg>
+        </button>
+        <a class="btn btn--primary" href="#products">Mua ngay</a>
       </div>
     </div>
   </header>
@@ -142,14 +152,17 @@
     </section>
   </main>
 
-  <footer class="footer">
+  <!-- FOOTER -->
+  <footer class="footer" id="footer">
     <div class="container footer__grid">
       <div class="footer__col">
         <div class="logo logo--footer">
           <span class="logo__mark"></span>
           <span class="logo__text">YaMate</span>
         </div>
-        <p class="footer__text">Cửa hàng xe moto online – tư vấn chọn xe, hỗ trợ trả góp, giao xe theo lịch hẹn.</p>
+        <p class="footer__text">
+          Cửa hàng xe moto online – tư vấn chọn xe, hỗ trợ trả góp, giao xe theo lịch hẹn.
+        </p>
       </div>
 
       <div class="footer__col">
@@ -162,13 +175,12 @@
       </div>
 
       <div class="footer__col">
-        <h3 class="footer__title">Điều hướng</h3>
-        <ul class="footer__list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="shop.html">Shop</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="cart.html">Cart</a></li>
-        </ul>
+        <h3 class="footer__title">Mạng xã hội</h3>
+        <div class="social">
+          <a class="social__link" href="#" aria-label="Facebook"><img src="https://freepnglogo.com/images/all_img/facebook-logo.png" alt="itviecblog" width="400" height="40"></a>
+          <a class="social__link" href="#" aria-label="Instagram"><img src="https://www.pngarts.com/files/11/IG-Logo-PNG-Transparent-Image.png" alt="itviecblog" width="400" height="40"></a>
+          <a class="social__link" href="#" aria-label="YouTube"><img src="https://images.seeklogo.com/logo-png/28/1/youtube-logo-png_seeklogo-287828.png" alt="itviecblog" width="400" height="40"></a></a>
+        </div>
       </div>
     </div>
 
