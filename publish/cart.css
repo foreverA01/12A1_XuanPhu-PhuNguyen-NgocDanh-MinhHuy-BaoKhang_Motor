@@ -66,6 +66,44 @@
   margin-top: 10px;
 }
 
+.qty-box{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.qty-btn{
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.qty-btn:hover{
+  background: rgba(255,255,255,.1);
+}
+
+.remove-btn{
+  margin-top: 8px;
+  background: transparent;
+  color: #ff6b63;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.remove-btn:hover{
+  text-decoration: underline;
+}
+
+.cart-empty{
+  padding: 24px 0;
+  color: rgba(233,238,246,.72);
+}
+
 @media (max-width: 980px){
   .cart-layout{
     grid-template-columns: 1fr;

@@ -18,25 +18,22 @@
 
       <nav class="nav">
         <a class="nav__link" href="../index.html">Home</a>
-        <a class="nav__link" href="src/shop.html">Shop</a>
-        <a class="nav__link" href="src/blog.html">Blog</a>
-        <a class="nav__link" href="src/about.html">About</a>
-        <a class="nav__link" href="src/contact.html">Contact</a>
-        <a class="nav__link" href="src/cart.html">Cart</a>
+        <a class="nav__link" href="shop.html">Shop</a>
+        <a class="nav__link" href="blog.html">Blog</a>
+        <a class="nav__link" href="about.html">About</a>
+        <a class="nav__link" href="contact.html">Contact</a>
+        <a class="nav__link" href="cart.html">Cart</a>
       </nav>
 
       <div class="header__actions">
-        <button class="icon-btn" aria-label="Tìm kiếm">
-          <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
-            <path d="M10.5 3a7.5 7.5 0 1 0 4.74 13.33l3.72 3.72 1.41-1.41-3.72-3.72A7.5 7.5 0 0 0 10.5 3Zm0 2a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11Z"/>
-          </svg>
-        </button>
         <button class="icon-btn" style="padding-right: 10px;" aria-label="Giỏ hàng">
-          <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
-            <path d="M7 4h-2l-1 2v2h2l2.6 9.4A3 3 0 0 0 11.5 22h7.1a3 3 0 0 0 2.9-2.2L23 10H7.4L6.7 7H21V5H7.2L7 4Zm4.5 16a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm7 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/>
-          </svg>
+          <a href="cart.html">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+              <path d="M7 4h-2l-1 2v2h2l2.6 9.4A3 3 0 0 0 11.5 22h7.1a3 3 0 0 0 2.9-2.2L23 10H7.4L6.7 7H21V5H7.2L7 4Zm4.5 16a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm7 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/>
+            </svg>
+          </a>
         </button>
-        <a class="btn btn--primary" href="#products">Mua ngay</a>
+        <a class="btn btn--primary" href="shop.html">Mua ngay</a>
       </div>
     </div>
   </header>
@@ -85,171 +82,252 @@
           </div>
         </div>
 
-        <div class="grid grid--4">
-          <article class="card product">
+        <div class="grid grid--4" id="productGrid">
+
+          <article class="card product"
+            data-id="1"
+            data-name="Exciter 155"
+            data-price="55200000"
+            data-image="../assets/27fa0c6b3e02c82f6bfc94ca9be14b45.jpg"
+            data-brand="yamaha"
+            data-type="sport">
             <div class="product__img">
-              <img src="../assets/27fa0c6b3e02c82f6bfc94ca9be14b45.jpg" alt="Exciter 155" />
+              <img src="../assets/27fa0c6b3e02c82f6bfc94ca9be14b45.jpg" alt="Exciter 155">
             </div>
             <div class="product__body">
               <h3 class="product__name">Exciter 155</h3>
               <p class="product__price">55.200.000₫</p>
               <div class="product__actions">
-                <a class="btn btn--ghost btn--full" href="product.html">Chi tiết</a>
-                <a class="btn btn--primary btn--full" href="cart.html">Thêm giỏ</a>
+                <a class="btn btn--ghost btn--full" href="product.html">Details</a>
+                <button class="btn btn--primary btn--full add-to-cart">Add to cart</button>
               </div>
             </div>
           </article>
 
-          <article class="card product">
+          <article class="card product"
+            data-id="2"
+            data-name="Winner R"
+            data-price="46160000"
+            data-image="../assets/OIP.webp"
+            data-brand="honda"
+            data-type="sport">
             <div class="product__img">
-              <img src="../assets/OIP.webp" alt="Winner R" />
+              <img src="../assets/OIP.webp" alt="Winner R">
             </div>
             <div class="product__body">
               <h3 class="product__name">Winner R</h3>
               <p class="product__price">46.160.000₫</p>
               <div class="product__actions">
-                <a class="btn btn--ghost btn--full" href="product.html">Chi tiết</a>
-                <a class="btn btn--primary btn--full" href="cart.html">Thêm giỏ</a>
+                <a class="btn btn--ghost btn--full" href="product.html">Details</a>
+                <button class="btn btn--primary btn--full add-to-cart">Add to cart</button>
               </div>
             </div>
           </article>
 
-          <article class="card product">
+          <article class="card product"
+            data-id="3"
+            data-name="Touring 250"
+            data-price="86000000"
+            data-image="../assets/2.jpg"
+            data-brand="yamaha"
+            data-type="touring">
             <div class="product__img">
-              <img src="../assets/2.jpg" alt="Touring 250" />
+              <img src="../assets/2.jpg" alt="Touring 250">
             </div>
             <div class="product__body">
               <h3 class="product__name">Touring 250</h3>
               <p class="product__price">86.000.000₫</p>
               <div class="product__actions">
-                <a class="btn btn--ghost btn--full" href="product.html">Chi tiết</a>
-                <a class="btn btn--primary btn--full" href="cart.html">Thêm giỏ</a>
+                <a class="btn btn--ghost btn--full" href="product.html">Details</a>
+                <button class="btn btn--primary btn--full add-to-cart">Add to cart</button>
               </div>
             </div>
           </article>
 
-          <article class="card product">
+          <article class="card product"
+            data-id="4"
+            data-name="Scooter Pro 160"
+            data-price="52300000"
+            data-image="../assets/8d2d521084e846129af08bd8f377f24b.jpg"
+            data-brand="honda"
+            data-type="scooter">
             <div class="product__img">
-              <img src="../assets/3.jpg" alt="Classic 175" />
-            </div>
-            <div class="product__body">
-              <h3 class="product__name">Classic 175</h3>
-              <p class="product__price">59.900.000₫</p>
-              <div class="product__actions">
-                <a class="btn btn--ghost btn--full" href="product.html">Chi tiết</a>
-                <a class="btn btn--primary btn--full" href="cart.html">Thêm giỏ</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="card product">
-            <div class="product__img">
-              <img src="../assets/8d2d521084e846129af08bd8f377f24b.jpg" alt="Scooter Pro 160" />
+              <img src="../assets/8d2d521084e846129af08bd8f377f24b.jpg" alt="Scooter Pro 160">
             </div>
             <div class="product__body">
               <h3 class="product__name">Scooter Pro 160</h3>
               <p class="product__price">52.300.000₫</p>
               <div class="product__actions">
-                <a class="btn btn--ghost btn--full" href="product.html">Chi tiết</a>
-                <a class="btn btn--primary btn--full" href="cart.html">Thêm giỏ</a>
+                <a class="btn btn--ghost btn--full" href="product.html">Details</a>
+                <button class="btn btn--primary btn--full add-to-cart">Add to cart</button>
               </div>
             </div>
           </article>
 
-          <article class="card product">
+          <!-- 5 -->
+          <article class="card product"
+            data-id="5"
+            data-name="Classic 175"
+            data-price="59900000"
+            data-image="../assets/3.jpg"
+            data-brand="yamaha"
+            data-type="classic">
             <div class="product__img">
-              <img src="../assets/6.jpg" alt="SportCity 300" />
+              <img src="../assets/3.jpg" alt="Classic 175">
+            </div>
+            <div class="product__body">
+              <h3 class="product__name">Classic 175</h3>
+              <p class="product__price">59.900.000₫</p>
+              <div class="product__actions">
+                <a class="btn btn--ghost btn--full" href="product.html">Details</a>
+                <button class="btn btn--primary btn--full add-to-cart">Add to cart</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6 -->
+          <article class="card product"
+            data-id="6"
+            data-name="SportCity 300"
+            data-price="129000000"
+            data-image="../assets/6.jpg"
+            data-brand="suzuki"
+            data-type="sport">
+            <div class="product__img">
+              <img src="../assets/6.jpg" alt="SportCity 300">
             </div>
             <div class="product__body">
               <h3 class="product__name">SportCity 300</h3>
               <p class="product__price">129.000.000₫</p>
               <div class="product__actions">
-                <a class="btn btn--ghost btn--full" href="product.html">Chi tiết</a>
-                <a class="btn btn--primary btn--full" href="cart.html">Thêm giỏ</a>
+                <a class="btn btn--ghost btn--full" href="product.html">Details</a>
+                <button class="btn btn--primary btn--full add-to-cart">Add to cart</button>
               </div>
             </div>
           </article>
 
-          <article class="card product">
+          <!-- 7 -->
+          <article class="card product"
+            data-id="7"
+            data-name="Adventure 400"
+            data-price="168000000"
+            data-image="../assets/7.jpg"
+            data-brand="honda"
+            data-type="touring">
             <div class="product__img">
-              <img src="../assets/7.jpg" alt="Adventure 400" />
+              <img src="../assets/7.jpg" alt="Adventure 400">
             </div>
             <div class="product__body">
               <h3 class="product__name">Adventure 400</h3>
               <p class="product__price">168.000.000₫</p>
               <div class="product__actions">
-                <a class="btn btn--ghost btn--full" href="product.html">Chi tiết</a>
-                <a class="btn btn--primary btn--full" href="cart.html">Thêm giỏ</a>
+                <a class="btn btn--ghost btn--full" href="product.html">Details</a>
+                <button class="btn btn--primary btn--full add-to-cart">Add to cart</button>
               </div>
             </div>
           </article>
 
-          <article class="card product">
+          <!-- 8 -->
+          <article class="card product"
+            data-id="8"
+            data-name="Naked 200"
+            data-price="74500000"
+            data-image="../assets/8.jpg"
+            data-brand="yamaha"
+            data-type="naked">
             <div class="product__img">
-              <img src="../assets/8.jpg" alt="Naked 200" />
+              <img src="../assets/8.jpg" alt="Naked 200">
             </div>
             <div class="product__body">
               <h3 class="product__name">Naked 200</h3>
               <p class="product__price">74.500.000₫</p>
               <div class="product__actions">
-                <a class="btn btn--ghost btn--full" href="product.html">Chi tiết</a>
-                <a class="btn btn--primary btn--full" href="cart.html">Thêm giỏ</a>
+                <a class="btn btn--ghost btn--full" href="product.html">Details</a>
+                <button class="btn btn--primary btn--full add-to-cart">Add to cart</button>
               </div>
             </div>
           </article>
 
-          <article class="card product">
+          <!-- 9 -->
+          <article class="card product"
+            data-id="9"
+            data-name="CB150 Street"
+            data-price="63800000"
+            data-image="../assets/9.jpg"
+            data-brand="honda"
+            data-type="naked">
             <div class="product__img">
-              <img src="../assets/9.webp" alt="CB150 Street" />
+              <img src="../assets/9.jpg" alt="CB150 Street">
             </div>
             <div class="product__body">
               <h3 class="product__name">CB150 Street</h3>
               <p class="product__price">63.800.000₫</p>
               <div class="product__actions">
-                <a class="btn btn--ghost btn--full" href="product.html">Chi tiết</a>
-                <a class="btn btn--primary btn--full" href="cart.html">Thêm giỏ</a>
+                <a class="btn btn--ghost btn--full" href="product.html">Details</a>
+                <button class="btn btn--primary btn--full add-to-cart">Add to cart</button>
               </div>
             </div>
           </article>
 
-          <article class="card product">
+          <!-- 10 -->
+          <article class="card product"
+            data-id="10"
+            data-name="Racing 150"
+            data-price="71200000"
+            data-image="../assets/10.jpg"
+            data-brand="yamaha"
+            data-type="sport">
             <div class="product__img">
-              <img src="../assets/10.jpg" alt="Racing 150" />
+              <img src="../assets/10.jpg" alt="Racing 150">
             </div>
             <div class="product__body">
               <h3 class="product__name">Racing 150</h3>
               <p class="product__price">71.200.000₫</p>
               <div class="product__actions">
-                <a class="btn btn--ghost btn--full" href="product.html">Chi tiết</a>
-                <a class="btn btn--primary btn--full" href="cart.html">Thêm giỏ</a>
+                <a class="btn btn--ghost btn--full" href="product.html">Details</a>
+                <button class="btn btn--primary btn--full add-to-cart">Add to cart</button>
               </div>
             </div>
           </article>
 
-          <article class="card product">
+          <!-- 11 -->
+          <article class="card product"
+            data-id="11"
+            data-name="Urban Scooter 125"
+            data-price="39900000"
+            data-image="../assets/11.jpg"
+            data-brand="honda"
+            data-type="scooter">
             <div class="product__img">
-              <img src="../assets/11.jpg" alt="Urban Scooter 125" />
+              <img src="../assets/11.jpg" alt="Urban Scooter 125">
             </div>
             <div class="product__body">
               <h3 class="product__name">Urban Scooter 125</h3>
               <p class="product__price">39.900.000₫</p>
               <div class="product__actions">
-                <a class="btn btn--ghost btn--full" href="product.html">Chi tiết</a>
-                <a class="btn btn--primary btn--full" href="cart.html">Thêm giỏ</a>
+                <a class="btn btn--ghost btn--full" href="product.html">Details</a>
+                <button class="btn btn--primary btn--full add-to-cart">Add to cart</button>
               </div>
             </div>
           </article>
 
-          <article class="card product">
+          <!-- 12 -->
+          <article class="card product"
+            data-id="12"
+            data-name="Neo Retro 250"
+            data-price="92500000"
+            data-image="../assets/12.jpg"
+            data-brand="yamaha"
+            data-type="classic">
             <div class="product__img">
-              <img src="../assets/12.jpg" alt="Neo Retro 250" />
+              <img src="../assets/12.jpg" alt="Neo Retro 250">
             </div>
             <div class="product__body">
               <h3 class="product__name">Neo Retro 250</h3>
               <p class="product__price">92.500.000₫</p>
               <div class="product__actions">
-                <a class="btn btn--ghost btn--full" href="product.html">Chi tiết</a>
-                <a class="btn btn--primary btn--full" href="cart.html">Thêm giỏ</a>
+                <a class="btn btn--ghost btn--full" href="product.html">Details</a>
+                <button class="btn btn--primary btn--full add-to-cart">Add to cart</button>
               </div>
             </div>
           </article>
@@ -300,5 +378,94 @@
       <p>© 2026 YaMate. All rights reserved.</p>
     </div>
   </footer>
+
+    <script>
+    function formatPrice(price) {
+      return Number(price).toLocaleString("vi-VN") + "₫";
+    }
+
+    function getCart() {
+      return JSON.parse(localStorage.getItem("cart")) || [];
+    }
+
+    function saveCart(cart) {
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
+
+    function addToCart(product) {
+      const cart = getCart();
+      const existing = cart.find(item => item.id === product.id);
+
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({
+          ...product,
+          quantity: 1
+        });
+      }
+
+      saveCart(cart);
+      alert(product.name + " added to cart.");
+    }
+
+    const productCards = document.querySelectorAll(".product");
+    const addButtons = document.querySelectorAll(".add-to-cart");
+
+    addButtons.forEach(button => {
+      button.addEventListener("click", function () {
+        const card = this.closest(".product");
+
+        const product = {
+          id: card.dataset.id,
+          name: card.dataset.name,
+          price: Number(card.dataset.price),
+          image: card.dataset.image,
+          brand: card.dataset.brand,
+          type: card.dataset.type
+        };
+
+        addToCart(product);
+      });
+    });
+
+    const filterBrand = document.getElementById("filterBrand");
+    const filterType = document.getElementById("filterType");
+    const sortPrice = document.getElementById("sortPrice");
+    const productGrid = document.getElementById("productGrid");
+
+    function applyFilters() {
+      let cards = Array.from(productGrid.querySelectorAll(".product"));
+
+      const brandValue = filterBrand.value;
+      const typeValue = filterType.value;
+      const sortValue = sortPrice.value;
+
+      cards.forEach(card => {
+        const matchBrand = brandValue === "all" || card.dataset.brand === brandValue;
+        const matchType = typeValue === "all" || card.dataset.type === typeValue;
+
+        if (matchBrand && matchType) {
+          card.style.display = "";
+        } else {
+          card.style.display = "none";
+        }
+      });
+
+      const visibleCards = cards.filter(card => card.style.display !== "none");
+
+      if (sortValue === "low-high") {
+        visibleCards.sort((a, b) => Number(a.dataset.price) - Number(b.dataset.price));
+      } else if (sortValue === "high-low") {
+        visibleCards.sort((a, b) => Number(b.dataset.price) - Number(a.dataset.price));
+      }
+
+      visibleCards.forEach(card => productGrid.appendChild(card));
+    }
+
+    filterBrand.addEventListener("change", applyFilters);
+    filterType.addEventListener("change", applyFilters);
+    sortPrice.addEventListener("change", applyFilters);
+  </script>
 </body>
 </html>

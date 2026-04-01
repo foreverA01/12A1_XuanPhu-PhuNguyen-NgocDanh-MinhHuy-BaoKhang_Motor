@@ -18,25 +18,22 @@
 
       <nav class="nav">
         <a class="nav__link" href="../index.html">Home</a>
-        <a class="nav__link" href="src/shop.html">Shop</a>
-        <a class="nav__link" href="src/blog.html">Blog</a>
-        <a class="nav__link" href="src/about.html">About</a>
-        <a class="nav__link" href="src/contact.html">Contact</a>
-        <a class="nav__link" href="src/cart.html">Cart</a>
+        <a class="nav__link" href="shop.html">Shop</a>
+        <a class="nav__link" href="blog.html">Blog</a>
+        <a class="nav__link" href="about.html">About</a>
+        <a class="nav__link" href="contact.html">Contact</a>
+        <a class="nav__link" href="cart.html">Cart</a>
       </nav>
 
       <div class="header__actions">
-        <button class="icon-btn" aria-label="Tìm kiếm">
-          <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
-            <path d="M10.5 3a7.5 7.5 0 1 0 4.74 13.33l3.72 3.72 1.41-1.41-3.72-3.72A7.5 7.5 0 0 0 10.5 3Zm0 2a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11Z"/>
-          </svg>
-        </button>
         <button class="icon-btn" style="padding-right: 10px;" aria-label="Giỏ hàng">
-          <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
-            <path d="M7 4h-2l-1 2v2h2l2.6 9.4A3 3 0 0 0 11.5 22h7.1a3 3 0 0 0 2.9-2.2L23 10H7.4L6.7 7H21V5H7.2L7 4Zm4.5 16a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm7 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/>
-          </svg>
+          <a href="cart.html">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+              <path d="M7 4h-2l-1 2v2h2l2.6 9.4A3 3 0 0 0 11.5 22h7.1a3 3 0 0 0 2.9-2.2L23 10H7.4L6.7 7H21V5H7.2L7 4Zm4.5 16a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm7 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/>
+            </svg>
+          </a>
         </button>
-        <a class="btn btn--primary" href="#products">Mua ngay</a>
+        <a class="btn btn--primary" href="shop.html">Mua ngay</a>
       </div>
     </div>
   </header>
@@ -54,13 +51,13 @@
       <div class="container product-detail">
         <div class="product-gallery">
           <div class="card product-gallery__main">
-            <img src="assets/27fa0c6b3e02c82f6bfc94ca9be14b45.jpg" alt="Exciter 155">
+            <img src="../assets/27fa0c6b3e02c82f6bfc94ca9be14b45.jpg" alt="Exciter 155">
           </div>
 
           <div class="product-gallery__thumbs">
-            <div class="card thumb"><img src="assets/27fa0c6b3e02c82f6bfc94ca9be14b45.jpg" alt="thumb 1"></div>
-            <div class="card thumb"><img src="assets/2.jpg" alt="thumb 2"></div>
-            <div class="card thumb"><img src="assets/3.jpg" alt="thumb 3"></div>
+            <div class="card thumb"><img src="../assets/would-you-consider-this-a-scooter-my-yamaha-exciter-150-v0-TqXzDqYcqelcPDqKTuzLB3Z-OPSVyg54I6_8BwnwbHM.webp" alt="thumb 1"></div>
+            <div class="card thumb"><img src="../assets/images.jpg" alt="thumb 2"></div>
+            <div class="card thumb"><img src="../assets/haha.jpg" alt="thumb 3"></div>
           </div>
         </div>
 
@@ -73,7 +70,14 @@
             động cơ bền bỉ và khả năng tăng tốc tốt. Phù hợp cho sinh viên, người đi làm và người yêu thích
             phong cách thể thao.
           </p>
-
+          <div id="productData"
+            data-id="1"
+            data-name="Exciter 155"
+            data-price="55200000"
+            data-image="../assets/27fa0c6b3e02c82f6bfc94ca9be14b45.jpg"
+            data-brand="yamaha"
+            data-type="sport">
+          </div>
           <ul class="spec-list">
             <li>Động cơ: 155cc, làm mát bằng dung dịch</li>
             <li>Hộp số: 6 cấp</li>
@@ -85,11 +89,18 @@
 
           <div class="qty-row">
             <label for="qty">Số lượng</label>
-            <input id="qty" class="input qty-input" type="number" min="1" value="1" />
+
+            <div class="qty-control">
+              <button class="qty-btn" id="decreaseBtn">−</button>
+              <input id="qty" type="number" value="1" min="1" class="qty-input">
+              <button class="qty-btn" id="increaseBtn">+</button>
+            </div>
           </div>
 
           <div class="product-info__actions">
-            <a class="btn btn--primary" href="cart.html">Thêm vào giỏ</a>
+            <button id="addToCartBtn" class="btn btn--primary">
+              Thêm vào giỏ
+            </button>
             <a class="btn btn--ghost" href="shop.html">Xem thêm sản phẩm</a>
           </div>
         </div>
@@ -106,7 +117,7 @@
         <div class="grid grid--4">
           <article class="card product">
             <div class="product__img">
-              <img src="assets/OIP.webp" alt="Winner R">
+              <img src="../assets/OIP.webp" alt="Winner R">
             </div>
             <div class="product__body">
               <h3 class="product__name">Winner R</h3>
@@ -117,7 +128,7 @@
 
           <article class="card product">
             <div class="product__img">
-              <img src="assets/10.jpg" alt="Racing 150">
+              <img src="../assets/10.jpg" alt="Racing 150">
             </div>
             <div class="product__body">
               <h3 class="product__name">Racing 150</h3>
@@ -128,7 +139,7 @@
 
           <article class="card product">
             <div class="product__img">
-              <img src="assets/8.jpg" alt="Naked 200">
+              <img src="../assets/8.jpg" alt="Naked 200">
             </div>
             <div class="product__body">
               <h3 class="product__name">Naked 200</h3>
@@ -139,7 +150,7 @@
 
           <article class="card product">
             <div class="product__img">
-              <img src="assets/9.jpg" alt="CB150 Street">
+              <img src="../assets/9.jpg" alt="CB150 Street">
             </div>
             <div class="product__body">
               <h3 class="product__name">CB150 Street</h3>
@@ -188,5 +199,64 @@
       <p>© 2026 YaMate. All rights reserved.</p>
     </div>
   </footer>
+  <script>
+    function getCart() {
+      return JSON.parse(localStorage.getItem("cart")) || [];
+    }
+
+    function saveCart(cart) {
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
+
+    function addToCart(product) {
+      const cart = getCart();
+
+      const existing = cart.find(item => item.id === product.id);
+
+      if (existing) {
+        existing.quantity += product.quantity;
+      } else {
+        cart.push(product);
+      }
+
+      saveCart(cart);
+
+      alert(product.name + " added to cart!");
+    }
+
+    document.getElementById("addToCartBtn").addEventListener("click", () => {
+      const data = document.getElementById("productData");
+
+      const quantity = document.getElementById("qty")
+        ? Number(document.getElementById("qty").value)
+        : 1;
+
+      const product = {
+        id: data.dataset.id,
+        name: data.dataset.name,
+        price: Number(data.dataset.price),
+        image: data.dataset.image,
+        brand: data.dataset.brand,
+        type: data.dataset.type,
+        quantity: quantity
+      };
+
+      addToCart(product);
+    });
+
+    const qtyInput = document.getElementById("qty");
+    const increaseBtn = document.getElementById("increaseBtn");
+    const decreaseBtn = document.getElementById("decreaseBtn");
+
+    increaseBtn.addEventListener("click", () => {
+      qtyInput.value = Number(qtyInput.value) + 1;
+    });
+
+    decreaseBtn.addEventListener("click", () => {
+      if (qtyInput.value > 1) {
+        qtyInput.value = Number(qtyInput.value) - 1;
+      }
+    });
+  </script>
 </body>
 </html>

@@ -76,15 +76,64 @@
   margin-bottom: 8px;
 }
 
+/* Quantity row */
 .qty-row{
   display: flex;
-  align-items: center;
-  gap: 12px;
+  flex-direction: column;
+  gap: 10px;
   margin-bottom: 18px;
 }
 
+/* control wrapper */
+.qty-control{
+  display: inline-flex;
+  align-items: center;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.05);
+  overflow: hidden;
+  width: fit-content;
+}
+
+/* buttons */
+.qty-btn{
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: rgba(255,255,255,.06);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+
+/* hover effect */
+.qty-btn:hover{
+  background: rgba(255,255,255,.12);
+}
+
+/* input */
 .qty-input{
-  width: 100px;
+  width: 60px;
+  height: 40px;
+  text-align: center;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-weight: 700;
+  outline: none;
+}
+
+/* remove arrows (important for clean UI) */
+.qty-input::-webkit-outer-spin-button,
+.qty-input::-webkit-inner-spin-button{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.qty-input[type=number]{
+  -moz-appearance: textfield;
 }
 
 .product-info__actions{

@@ -18,25 +18,22 @@
 
       <nav class="nav">
         <a class="nav__link" href="../index.html">Home</a>
-        <a class="nav__link" href="src/shop.html">Shop</a>
-        <a class="nav__link" href="src/blog.html">Blog</a>
-        <a class="nav__link" href="src/about.html">About</a>
-        <a class="nav__link" href="src/contact.html">Contact</a>
-        <a class="nav__link" href="src/cart.html">Cart</a>
+        <a class="nav__link" href="shop.html">Shop</a>
+        <a class="nav__link" href="blog.html">Blog</a>
+        <a class="nav__link" href="about.html">About</a>
+        <a class="nav__link" href="contact.html">Contact</a>
+        <a class="nav__link" href="cart.html">Cart</a>
       </nav>
 
       <div class="header__actions">
-        <button class="icon-btn" aria-label="Tìm kiếm">
-          <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
-            <path d="M10.5 3a7.5 7.5 0 1 0 4.74 13.33l3.72 3.72 1.41-1.41-3.72-3.72A7.5 7.5 0 0 0 10.5 3Zm0 2a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11Z"/>
-          </svg>
-        </button>
         <button class="icon-btn" style="padding-right: 10px;" aria-label="Giỏ hàng">
-          <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
-            <path d="M7 4h-2l-1 2v2h2l2.6 9.4A3 3 0 0 0 11.5 22h7.1a3 3 0 0 0 2.9-2.2L23 10H7.4L6.7 7H21V5H7.2L7 4Zm4.5 16a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm7 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/>
-          </svg>
+          <a href="cart.html">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+              <path d="M7 4h-2l-1 2v2h2l2.6 9.4A3 3 0 0 0 11.5 22h7.1a3 3 0 0 0 2.9-2.2L23 10H7.4L6.7 7H21V5H7.2L7 4Zm4.5 16a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm7 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/>
+            </svg>
+          </a>
         </button>
-        <a class="btn btn--primary" href="#products">Mua ngay</a>
+        <a class="btn btn--primary" href="shop.html">Mua ngay</a>
       </div>
     </div>
   </header>
@@ -57,66 +54,28 @@
             <span>Sản phẩm</span>
             <span>Giá</span>
             <span>Số lượng</span>
-            <span>Tổng</span>
+            <span>Tổng cộng</span>
           </div>
 
-          <div class="cart-row">
-            <div class="cart-product">
-              <img src="assets/27fa0c6b3e02c82f6bfc94ca9be14b45.jpg" alt="Exciter 155">
-              <div>
-                <strong>Exciter 155</strong>
-                <p>Xe côn tay thể thao</p>
-              </div>
-            </div>
-            <span>55.200.000₫</span>
-            <span>1</span>
-            <span>55.200.000₫</span>
-          </div>
-
-          <div class="cart-row">
-            <div class="cart-product">
-              <img src="assets/OIP.webp" alt="Winner R">
-              <div>
-                <strong>Winner R</strong>
-                <p>Thiết kế mạnh mẽ</p>
-              </div>
-            </div>
-            <span>46.160.000₫</span>
-            <span>1</span>
-            <span>46.160.000₫</span>
-          </div>
-
-          <div class="cart-row">
-            <div class="cart-product">
-              <img src="assets/8d2d521084e846129af08bd8f377f24b.jpg" alt="Scooter Pro 160">
-              <div>
-                <strong>Scooter Pro 160</strong>
-                <p>Đi phố linh hoạt</p>
-              </div>
-            </div>
-            <span>52.300.000₫</span>
-            <span>1</span>
-            <span>52.300.000₫</span>
-          </div>
+          <div id="cartItems"></div>
         </div>
 
         <aside class="card cart-summary">
           <h2 class="cart-summary__title">Tóm tắt đơn hàng</h2>
+
           <div class="summary-row">
-            <span>Tạm tính</span>
-            <span>153.660.000₫</span>
+            <span>Subtotal</span>
+            <span id="subtotal">0₫</span>
           </div>
+
           <div class="summary-row">
-            <span>Phí vận chuyển</span>
+            <span>Giao hàng</span>
             <span>0₫</span>
           </div>
-          <div class="summary-row">
-            <span>Giảm giá</span>
-            <span>2.000.000₫</span>
-          </div>
+
           <div class="summary-row summary-row--total">
-            <span>Tổng cộng</span>
-            <span>151.660.000₫</span>
+            <span>Tổng</span>
+            <span id="grandTotal">0₫</span>
           </div>
 
           <button class="btn btn--primary btn--full">Thanh toán</button>
@@ -162,5 +121,111 @@
       <p>© 2026 YaMate. All rights reserved.</p>
     </div>
   </footer>
+  <script>
+    function formatPrice(price) {
+      return Number(price).toLocaleString("vi-VN") + "₫";
+    }
+
+    function getCart() {
+      return JSON.parse(localStorage.getItem("cart")) || [];
+    }
+
+    function saveCart(cart) {
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
+
+    function renderCart() {
+      const cart = getCart();
+      const cartItems = document.getElementById("cartItems");
+      const subtotalEl = document.getElementById("subtotal");
+      const grandTotalEl = document.getElementById("grandTotal");
+
+      cartItems.innerHTML = "";
+
+      if (cart.length === 0) {
+        cartItems.innerHTML = `
+          <div class="cart-empty">
+            <p>Your cart is empty.</p>
+          </div>
+        `;
+        subtotalEl.textContent = "0₫";
+        grandTotalEl.textContent = "0₫";
+        return;
+      }
+
+      let subtotal = 0;
+
+      cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        subtotal += itemTotal;
+
+        const row = document.createElement("div");
+        row.className = "cart-row";
+        row.innerHTML = `
+          <div class="cart-product">
+            <img src="${item.image}" alt="${item.name}">
+            <div>
+              <strong>${item.name}</strong>
+              <p>${item.brand} - ${item.type}</p>
+              <button class="remove-btn" data-id="${item.id}">Remove</button>
+            </div>
+          </div>
+          <span>${formatPrice(item.price)}</span>
+          <div class="qty-box">
+            <button class="qty-btn decrease-btn" data-id="${item.id}">-</button>
+            <span>${item.quantity}</span>
+            <button class="qty-btn increase-btn" data-id="${item.id}">+</button>
+          </div>
+          <span>${formatPrice(itemTotal)}</span>
+        `;
+        cartItems.appendChild(row);
+      });
+
+      subtotalEl.textContent = formatPrice(subtotal);
+      grandTotalEl.textContent = formatPrice(subtotal);
+
+      addCartEvents();
+    }
+
+    function addCartEvents() {
+      document.querySelectorAll(".increase-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const id = btn.dataset.id;
+          const cart = getCart();
+          const item = cart.find(p => p.id === id);
+          if (item) item.quantity += 1;
+          saveCart(cart);
+          renderCart();
+        });
+      });
+
+      document.querySelectorAll(".decrease-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const id = btn.dataset.id;
+          let cart = getCart();
+          const item = cart.find(p => p.id === id);
+          if (item) {
+            item.quantity -= 1;
+            if (item.quantity <= 0) {
+              cart = cart.filter(p => p.id !== id);
+            }
+          }
+          saveCart(cart);
+          renderCart();
+        });
+      });
+
+      document.querySelectorAll(".remove-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const id = btn.dataset.id;
+          const cart = getCart().filter(item => item.id !== id);
+          saveCart(cart);
+          renderCart();
+        });
+      });
+    }
+
+    renderCart();
+  </script>
 </body>
 </html>
