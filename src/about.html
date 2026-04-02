@@ -35,8 +35,28 @@
         </button>
         <a class="btn btn--primary" href="shop.html">Mua ngay</a>
       </div>
+    <!-- Hamburger button -->
+          <button id="menuToggle" class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+            </div>
+        </div>
+      </header>
+
+      <div id="mobileMenu" class="mobile-menu">
+      <div class="mobile-menu__content">
+
+        <a href="../index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="cart.html">Cart</a>
+
+      </div>
     </div>
-  </header>
 
   <main>
     <section class="page-hero">
@@ -151,5 +171,21 @@
       <p>© 2026 YaMate. All rights reserved.</p>
     </div>
   </footer>
+  
+    <script>
+      const menuToggle = document.getElementById("menuToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("active");
+      });
+
+      // Close menu when clicking link
+      document.querySelectorAll(".mobile-menu a").forEach(link => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.remove("active");
+        });
+      });
+    </script>
 </body>
 </html>

@@ -35,8 +35,28 @@
         </button>
         <a class="btn btn--primary" href="shop.html">Mua ngay</a>
       </div>
+    <!-- Hamburger button -->
+          <button id="menuToggle" class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+            </div>
+        </div>
+      </header>
+
+      <div id="mobileMenu" class="mobile-menu">
+      <div class="mobile-menu__content">
+
+        <a href="../index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="cart.html">Cart</a>
+
+      </div>
     </div>
-  </header>
 
   <main>
     <section class="page-hero">
@@ -379,93 +399,130 @@
     </div>
   </footer>
 
-    <script>
-    function formatPrice(price) {
-      return Number(price).toLocaleString("vi-VN") + "₫";
-    }
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      function formatPrice(price) {
+        return Number(price).toLocaleString("vi-VN") + "₫";
+      }
 
-    function getCart() {
-      return JSON.parse(localStorage.getItem("cart")) || [];
-    }
+      function getCart() {
+        return JSON.parse(localStorage.getItem("cart")) || [];
+      }
 
-    function saveCart(cart) {
-      localStorage.setItem("cart", JSON.stringify(cart));
-    }
+      function saveCart(cart) {
+        localStorage.setItem("cart", JSON.stringify(cart));
+      }
 
-    function addToCart(product) {
-      const cart = getCart();
-      const existing = cart.find(item => item.id === product.id);
+      function updateCartCount() {
+        const cart = getCart();
+        const totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
+        const cartCount = document.getElementById("cartCount");
+        if (cartCount) cartCount.textContent = totalQty;
+      }
 
-      if (existing) {
-        existing.quantity += 1;
-      } else {
-        cart.push({
-          ...product,
-          quantity: 1
+      function addToCart(product) {
+        const cart = getCart();
+        const existing = cart.find(item => item.id === product.id);
+
+        if (existing) {
+          existing.quantity += 1;
+        } else {
+          cart.push({
+            ...product,
+            quantity: 1
+          });
+        }
+
+        saveCart(cart);
+        updateCartCount();
+        alert(product.name + " added to cart.");
+      }
+
+      const addButtons = document.querySelectorAll(".add-to-cart");
+
+      addButtons.forEach(button => {
+        button.addEventListener("click", function () {
+          const card = this.closest(".product");
+          if (!card) return;
+
+          const product = {
+            id: card.dataset.id,
+            name: card.dataset.name,
+            price: Number(card.dataset.price),
+            image: card.dataset.image,
+            brand: card.dataset.brand,
+            type: card.dataset.type
+          };
+
+          addToCart(product);
+        });
+      });
+
+      const filterBrand = document.getElementById("filterBrand");
+      const filterType = document.getElementById("filterType");
+      const sortPrice = document.getElementById("sortPrice");
+      const productGrid = document.getElementById("productGrid");
+
+      function applyFilters() {
+        if (!productGrid) return;
+
+        let cards = Array.from(productGrid.querySelectorAll(".product"));
+
+        const brandValue = filterBrand ? filterBrand.value : "all";
+        const typeValue = filterType ? filterType.value : "all";
+        const sortValue = sortPrice ? sortPrice.value : "default";
+
+        cards.forEach(card => {
+          const matchBrand = brandValue === "all" || card.dataset.brand === brandValue;
+          const matchType = typeValue === "all" || card.dataset.type === typeValue;
+
+          card.style.display = (matchBrand && matchType) ? "" : "none";
+        });
+
+        const visibleCards = cards.filter(card => card.style.display !== "none");
+
+        if (sortValue === "low-high") {
+          visibleCards.sort((a, b) => Number(a.dataset.price) - Number(b.dataset.price));
+        } else if (sortValue === "high-low") {
+          visibleCards.sort((a, b) => Number(b.dataset.price) - Number(a.dataset.price));
+        }
+
+        visibleCards.forEach(card => productGrid.appendChild(card));
+      }
+
+      if (filterBrand) filterBrand.addEventListener("change", applyFilters);
+      if (filterType) filterType.addEventListener("change", applyFilters);
+      if (sortPrice) sortPrice.addEventListener("change", applyFilters);
+
+      const menuToggle = document.getElementById("menuToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener("click", function () {
+          mobileMenu.classList.toggle("active");
+          menuToggle.classList.toggle("active");
+        });
+
+        document.querySelectorAll(".mobile-menu a").forEach(link => {
+          link.addEventListener("click", function () {
+            mobileMenu.classList.remove("active");
+            menuToggle.classList.remove("active");
+          });
+        });
+
+        document.addEventListener("click", function (e) {
+          const clickedInsideMenu = mobileMenu.contains(e.target);
+          const clickedToggle = menuToggle.contains(e.target);
+
+          if (!clickedInsideMenu && !clickedToggle) {
+            mobileMenu.classList.remove("active");
+            menuToggle.classList.remove("active");
+          }
         });
       }
 
-      saveCart(cart);
-      alert(product.name + " added to cart.");
-    }
-
-    const productCards = document.querySelectorAll(".product");
-    const addButtons = document.querySelectorAll(".add-to-cart");
-
-    addButtons.forEach(button => {
-      button.addEventListener("click", function () {
-        const card = this.closest(".product");
-
-        const product = {
-          id: card.dataset.id,
-          name: card.dataset.name,
-          price: Number(card.dataset.price),
-          image: card.dataset.image,
-          brand: card.dataset.brand,
-          type: card.dataset.type
-        };
-
-        addToCart(product);
-      });
+      updateCartCount();
     });
-
-    const filterBrand = document.getElementById("filterBrand");
-    const filterType = document.getElementById("filterType");
-    const sortPrice = document.getElementById("sortPrice");
-    const productGrid = document.getElementById("productGrid");
-
-    function applyFilters() {
-      let cards = Array.from(productGrid.querySelectorAll(".product"));
-
-      const brandValue = filterBrand.value;
-      const typeValue = filterType.value;
-      const sortValue = sortPrice.value;
-
-      cards.forEach(card => {
-        const matchBrand = brandValue === "all" || card.dataset.brand === brandValue;
-        const matchType = typeValue === "all" || card.dataset.type === typeValue;
-
-        if (matchBrand && matchType) {
-          card.style.display = "";
-        } else {
-          card.style.display = "none";
-        }
-      });
-
-      const visibleCards = cards.filter(card => card.style.display !== "none");
-
-      if (sortValue === "low-high") {
-        visibleCards.sort((a, b) => Number(a.dataset.price) - Number(b.dataset.price));
-      } else if (sortValue === "high-low") {
-        visibleCards.sort((a, b) => Number(b.dataset.price) - Number(a.dataset.price));
-      }
-
-      visibleCards.forEach(card => productGrid.appendChild(card));
-    }
-
-    filterBrand.addEventListener("change", applyFilters);
-    filterType.addEventListener("change", applyFilters);
-    sortPrice.addEventListener("change", applyFilters);
-  </script>
+    </script>
 </body>
 </html>
